@@ -1,20 +1,7 @@
- Container(
-              height: 150,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(10)),
-              child: TextField(
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: const Color.fromARGB(255, 56, 151, 161))),
-                //  border: InputBorder.none,
-                  label: Padding(
-                    padding: const EdgeInsets.only(top: 80, left: 15),
-                    child: Text(
-                      "Content",
-                    ),
-                  ),
-                ),
-              ))
-        ],
+ ما معنى Adapter في Hive؟
+كلمة Adapter تعني "محوّل" أو "وسيط"، ووظيفته في Hive هي:
+
+تحويل الكائن (مثل كائن NoteModel) إلى صيغة يمكن تخزينها في قاعدة البيانات، والعكس أيضًا.
+
+Hive لا يعرف كيف يخزن كائن Dart عادي (مثل NoteModel) إلا إذا عرّفنا له كيف شكله.
+

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:noteapp/modle/note_modle.dart';
 import 'package:noteapp/view/edit_page.dart';
 
 class NoteOne extends StatelessWidget {
-  const NoteOne({super.key});
-
+  const NoteOne({super.key, required this.note});
+  final NoteModle note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,13 +19,13 @@ class NoteOne extends StatelessWidget {
         padding: EdgeInsets.only(bottom: 25, right: 10, left: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: const Color.fromARGB(255, 250, 174, 60)),
+            color:  Color(note.color)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
               title: Text(
-                "Flutter tips",
+                note.title,
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 22,
@@ -33,7 +34,7 @@ class NoteOne extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
-                  "Build your career with Safa",
+                  note.subTitle,
                   style: TextStyle(color: Colors.black),
                 ),
               ),
@@ -50,7 +51,7 @@ class NoteOne extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: Text(
-                "May 21,2022",
+                note.date,
                 style: TextStyle(color: Colors.black),
               ),
             )

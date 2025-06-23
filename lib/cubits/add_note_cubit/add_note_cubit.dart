@@ -9,7 +9,7 @@ part 'add_note_state.dart';
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
 
-  addNotet(NoteModle note) async {
+  addNote(NoteModle note) async {
     emit(AddNoteLoading());
 
     try {
@@ -18,7 +18,7 @@ class AddNoteCubit extends Cubit<AddNoteState> {
 
       emit(AddNoteSuccess());
     } catch (e) {
-      AddNoteFailur(errMasseg: e.toString());
+      emit(AddNoteFailur(errMasseg: e.toString()));
     }
   }
 }
